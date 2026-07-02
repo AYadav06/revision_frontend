@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ListTask } from "./components/List";
 import Todo from "./components/Todo";
+import Signup from "./components/ReactHookForm";
 
 export const App=()=>{
   const [test,setTest]=useState(0);
@@ -72,5 +73,6 @@ export const App=()=>{
 
   <ListTask />
   <Todo />
+  <Signup />
   </>
 }
