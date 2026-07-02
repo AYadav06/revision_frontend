@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ListTask } from "./components/List";
 
 export const App=()=>{
   const [test,setTest]=useState(0);
@@ -32,8 +33,6 @@ export const App=()=>{
       
     }
   }
-
-
 
     {/*  Conditional Rendering ...   1. if   2. &&  3. ?,:*/}
 
@@ -70,8 +69,7 @@ export const App=()=>{
     <button type="submit">Submit</button>
   </form>
 
-
-
+  <ListTask />
 
   </>
 }
