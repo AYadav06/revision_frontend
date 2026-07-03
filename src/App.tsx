@@ -4,6 +4,10 @@ import Todo from "./components/Todo";
 import Signup from "./components/ReactHookForm";
 import AuthProvider from "./hooks/AuthContext";
 import Navbar, { LoginButton } from "./components/Navbar";
+import { BrowserRouter, Route, Routes } from "react-router";
+import { Home } from "./pages/Home";
+import { Dashboard } from "./pages/Dashboard";
+import { NotFound } from "./pages/NotFound";
 
 export const App=()=>{
   const [test,setTest]=useState(0);
@@ -40,7 +44,7 @@ export const App=()=>{
 
     {/*  Conditional Rendering ...   1. if   2. &&  3. ?,:*/}
 
-  function  Dashboard({isLoding,isLoggedIn,username}) {
+  function  Dash({isLoding,isLoggedIn,username}) {
 
   // 1. if condition
   if(isLoding){
@@ -79,6 +83,13 @@ export const App=()=>{
   <Signup />
   <Navbar />
   <LoginButton />
+
+   <Routes>
+    <Route  path="/" element={<Home />}/>
+    <Route path="/dashboard" element={<Dashboard />}/> 
+    <Route path="*" element={<NotFound />} />
+   </Routes>
+  
   </AuthProvider>
   </>
 }

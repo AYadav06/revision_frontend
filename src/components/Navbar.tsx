@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import { useAuth } from "../hooks/AuthContext";
 
 
@@ -14,6 +15,8 @@ export default function Navbar() {
       ) : (
         <span>Please log in below.</span>
       )}
+      <Link to="/" >Home</Link>
+      <Link to="/dashboard">Dashboard</Link>
     </nav>
   );
 }
