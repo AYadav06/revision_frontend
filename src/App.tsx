@@ -2,7 +2,8 @@ import { useState } from "react";
 import { ListTask } from "./components/List";
 import Todo from "./components/Todo";
 import Signup from "./components/ReactHookForm";
-import UseEffectHook from "./hooks/UseEffect";
+import AuthProvider from "./hooks/AuthContext";
+import Navbar, { LoginButton } from "./components/Navbar";
 
 export const App=()=>{
   const [test,setTest]=useState(0);
@@ -57,6 +58,7 @@ export const App=()=>{
     
   }
   return <>
+  <AuthProvider >
   <h1 className="bg-amber-50">Hello hiii</h1>
   <p>{test}</p>
   <button onClick={()=>setTest(test => test +1)}>increment</button>
@@ -75,6 +77,8 @@ export const App=()=>{
   <ListTask />
   <Todo />
   <Signup />
-  <UseEffectHook />
+  <Navbar />
+  <LoginButton />
+  </AuthProvider>
   </>
 }
